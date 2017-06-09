@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Stay & Play</title>
+    <link rel="icon" type="image" href="Stay&Playtitlelogo.png" />
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN-->
+    <script src="https://use.fontawesome.com/c38831e163.js"></script>
+    <!--  animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link href="css/grayscale.min.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <!-- <span class="light">Stay &</span> Play -->
+                   <img src="Stay&Playlogo.png" id="logo"> 
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Search</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Events</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#hotels">Hotels</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 animated zoomIn">
+                        <h1 id="neonHeader">Stay<span id="andFont">&</span>Play</h1>
+                        <p class="intro-text">Find an event and hotel in your desired location</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <form>
+                <h2>SEARCH</h2>
+                    <div class="form-group">
+                        <label for="input-group date">Start Date</label>
+                        <div class="input-group date" id="datePicker1" data-provide="datepicker">
+                            <input type="text" class="form-control" id="exampleStartDate">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-group date">End Date</label>
+                        <div class="input-group date" id="datePicker2" data-provide="datepicker">
+                            <input type="text" class="form-control" id="exampleEndDate">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="exampleCity">City</label>
+                        <input type="text" class="form-control" id="exampleCity" aria-describedby="cityHelp" placeholder="ie: Austin">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleState">State</label>
+                        <input type="text" class="form-control" id="exampleState" aria-describedby="stateHelp" placeholder="ie: TX">
+                    </div>
+                     <div class="form-group">
+                        <label for="zipInput">Zip Code</label>
+                        <input type="number" class="form-control" id="zipInput" aria-describedby="zipHelp" placeholder="ie: 78701">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email Address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <a class="page-scroll" href="#download"><button type="submit" class="btn btn-default" id="userInputBtn">Submit</button></a>
+                    <!--  <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                 -->
+                </form>
+                <div id="oldSearchResults">
+                <h2>Previous Search Results</h2>
+                    <span id="oldSearchResultsContainer">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Download Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2" id="eventAppend">
+                    <h2>EVENTS</h2>
+                    <p>Here are the events in your area</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Map Section -->
+    <div class="container content-section" id="hotels">
+        <div id="map">MAP</div>
+    </div>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section text-center">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h2 id="meet">Meet Our Development Team</h2>
+                <div class="row bioImages">
+                    <section class="main">
+                        <ul class="ch-grid">
+                            <li>
+                                <div class="ch-item ch-img-1">
+                                    <div class="ch-info">
+                                        <h3>Adam Kirschner</h3>
+                                        <p><a href="https://github.com/akirschner89" target="_blank" ><i class="fa fa-github fa-5x"></i></a></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ch-item ch-img-2">
+                                    <div class="ch-info">
+                                        <h3>Brian Hummel</h3>
+                                        <p><a href="https://github.com/brianpatrickhummel" target="_blank" ><i class="fa fa-github fa-5x"></i></a></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ch-item ch-img-3">
+                                    <div class="ch-info">
+                                        <h3>Jake Lopez</h3>
+                                        <p><a href="https://github.com/JakeLopez" target="_blank" ><i class="fa fa-github fa-5x"></i></a></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ch-item ch-img-4">
+                                    <div class="ch-info">
+                                        <h3>Noe Tellez</h3>
+                                        <p><a href="https://github.com/noetlz10" target="_blank" ><i class="fa fa-github fa-5x"></i></a></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ch-item ch-img-5">
+                                    <div class="ch-info">
+                                        <h3>Stephen Bell</h3>
+                                        <p><a href="https://github.com/stephenjbell1" target="_blank" ><i class="fa fa-github fa-5x"></i></a></p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>          
+                    </section>
+                </div>    <!-- bio images row -->
+                <!-- <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                </p> -->
+                <!-- <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="copyright container text-center">
+            <p>Copyright &copy; Stay&Play 2017</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Noe's API KEY -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzSiwbjXsQeqGpN4zEw4ipujJZfKUo5aw&libraries=places,geometry"></script>
+    <!-- Plugin JavaScript -->
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+<!-- <<<<<<< HEAD -->
+
+   <!--  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzSiwbjXsQeqGpN4zEw4ipujJZfKUo5aw"></script>
+ -->
+<!-- ======= -->
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzSiwbjXsQeqGpN4zEw4ipujJZfKUo5aw&sensor=false"></script> -->
+<!-- >>>>>>> 122702d6c44bbf6ccce7a12c8d6f3e5c3f9b8f63
+ -->    <!-- Theme JavaScript -->
+
+    <script src="js/grayscale.min.js"></script>
+    <!-- script to make the Bio Image hover effect compatible with Touch Devices -->
+    <script type="text/javascript">$(function(){$('.ch-item').bind('touchstart', function(e){});});</script>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+</body>
+
+</html>

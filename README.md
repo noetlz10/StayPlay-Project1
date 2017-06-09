@@ -1,2 +1,1 @@
-# StayPlay-Project1
-First web application
+# stay-play
